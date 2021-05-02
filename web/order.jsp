@@ -104,7 +104,7 @@ function dil(form)
 				  <table cellspacing="5" cellpadding="3">	
 				  <TR>
 	<TD style="color:yellow;"> Product Name : </TD> <TD> <SELECT NAME="ProdCode">
-									<option value="paracetamol"> Paracetamol
+									<option value="Paracetamol"> Paracetamol
 									<option value="Zintec"> Zintec
 									<option value="Dettol"> Dettol
 									<option value="Volini Spray"> Volini Spray
@@ -121,12 +121,12 @@ function dil(form)
 	
 </TR>
 
-					<tr><td style="color:yellow;">Tax:</td><td> <input type="text" name="tax"/></td></tr>
-					<tr><td style="color:yellow;">Min Qty to Order :	</td><td> <input type="text" name="minq"/></td></tr>
+
+
 					<tr><td style="color:yellow;">Ordering Qty :</td><td> <input type="text" name="orderq"/></td></tr><tr><td style="color: yellow;">Delivery Address:</td><td><input type="text" name="Address"/></td></tr>
 					<tr><td style="color:yellow;">Discount :</td><td> <input type="text" name="discount"/></td></tr>
 					<tr><td style="color:yellow;">Net cost:</td><td> <input type="text" name="netcost"/></td></tr>
-					<tr><td style="color:yellow;">Amount:</td><td> <input type="text" name="amount"/></td></tr>
+					<tr><td style="color:yellow;">Amount:</td><td> <input type="text" disabled="disabled" name="amount"/></td></tr>
 					
 <TR><TD style="color:yellow;">  Mode of Payment: </TD>
 	

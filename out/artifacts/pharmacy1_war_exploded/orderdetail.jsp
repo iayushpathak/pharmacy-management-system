@@ -76,11 +76,7 @@
                 String ProdCode = request.getParameter("ProdCode");
                 String productname = request.getParameter("productname");
 
-                String tx = request.getParameter("tax");
-                double tax = Double.parseDouble(tx);
-
-                String min = request.getParameter("minq");
-                double minq = Double.parseDouble(min);
+                double minq = 2;
 
                 String order = request.getParameter("orderq");
                 double orderq = Double.parseDouble(order);
@@ -97,9 +93,15 @@
                 String paymode = request.getParameter("r1");
 
                 try {
+                    if(orderq < minq){
+                        out.print("Order quantity is less than minimum quantity to order");
+                        request.setAttribute("order", "Order quantity is less than minimum quantity to order");
+                    }
+                    else{
                     Connection con = GetCon.getCon();
                     PreparedStatement ps = con.prepareStatement("insert into neworder4 values(?,?,?,?,?,?,?,?,?,?)");
                     int nextvalue = GetCon.getPrimaryKey();
+                    double tax = amount*0.18;
                     ps.setInt(1, nextvalue);
                     // ps.setInt(1,8);
                     ps.setString(2, ProdCode);
@@ -130,7 +132,8 @@
                 <%
 
                         }
-                    } catch (SQLException e) {
+                    }
+                    }catch (SQLException e) {
                         e.printStackTrace();
                     }
 

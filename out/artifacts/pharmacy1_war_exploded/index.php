@@ -16,7 +16,7 @@ if(sds == null){alert("You are using a free package.\n You are not allowed to re
 <body>
 <div id="header">
 	<div id="navigation">
-    	<ul>
+    	<ul id = "navigation-bar">
         	<li><a href="index.jsp">HOME</a></li>
             <li><a href="about.jsp">ABOUT US</a></li>
             <li><a href="admin.jsp">ADMINISTRATOR </a></li>

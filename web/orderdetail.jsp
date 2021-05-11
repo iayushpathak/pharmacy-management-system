@@ -74,7 +74,7 @@
             <table width="300" border="0" cellspacing="10" cellpadding="0" align="center"><%
 
                 String ProdCode = request.getParameter("ProdCode");
-                String productname = request.getParameter("productname");
+                String productname = request.getParameter("ProdCode");
 
                 double minq = 2;
 

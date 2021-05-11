@@ -1,6 +1,13 @@
 @charset "utf-8";
 /* CSS Document */
 
+html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+}
+
 body{
 	margin:0;
 	color:#232323;
@@ -10,6 +17,7 @@ body{
 	padding-left: 0;
 	background:#f0f3f0;
 	width:100%;
+	min-height: 100%;
 }
 div, h1, h2, h3, h4, p, form, label, input, textarea, img, span{
 	margin:0; padding:0;
@@ -53,9 +61,10 @@ background:url(images/hioxindia-pharmacy_02.jpg) 0 0 repeat-x;
 #navigation
 {
 margin:0 auto;
-background:url(images/Pharmacy-wallpaper-HD46.jpg) 0 0 no-repeat;
-height:446px;
+background-color:#034ea2;
+height:120px;
 width:100%;
+background-size: cover;
 }
 #navigation ul
 {
@@ -66,15 +75,14 @@ list-style:none;
 font:normal 14px/40px Arial, Helvetica, sans-serif;
 display: inline-block;
 padding:0 30px;
-margin-top:410px;
-float:left;
+margin-top:80px;
 text-align:center;
 }
 #navigation ul li a
 {
 text-decoration:none;
 display:block;
-color:#034ea2;
+color:#ffffff;
 }
 #navigation ul li a:hover
 {
@@ -179,3 +187,4 @@ html, body{
 	padding:0;
 	margin:0;
 }
+

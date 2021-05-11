@@ -55,7 +55,7 @@ var sds = document.getElementById("dum");
 </script>
 <body>
 <div id="header">
-	<div id="navigation" style="background-color:white;">
+	<div id="navigation">
     	<ul>
             <li><a href="index.jsp">HOME</a></li>
             <li><a href="about.jsp">ABOUT US</a></li>
@@ -166,11 +166,7 @@ background-color:red;border:2px solid #336600;padding:3px;"></td></tr>
 
     </div>
 
-    <div id="footer_copyright" >
-        <p></p>
 
-        Copyright © Arka Jain University</div>
-</div>
 
 <script type="text/javascript">
     document.onload = ctck();

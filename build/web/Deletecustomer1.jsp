@@ -104,9 +104,9 @@ var sds = document.getElementById("dum");
 		try {
 			PreparedStatement ps=con.prepareStatement("delete  from newcust4 where id = '"+id+"' ");
 			
-			ResultSet rs=ps.executeQuery();
+			int rs=ps.executeUpdate();
            			
-		    if(rs.next()){          			
+		    if(rs>0){
 	        out.print("your Details has been deleted");
 			request.setAttribute("deleted","your Details has been deleted");
 			%>			
@@ -124,7 +124,7 @@ var sds = document.getElementById("dum");
 		out.println("your given id is wrong");
 		request.setAttribute("wrong","your given id is wrong");	
 		%>			
-			<jsp:forward page="Deletecustomer.jsp"></jsp:forward> 
+			<jsp:forward page="Deletecustomer.jsp"></jsp:forward>
 			<% 
 		}
 		

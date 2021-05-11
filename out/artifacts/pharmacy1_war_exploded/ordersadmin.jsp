@@ -191,12 +191,6 @@ var sds = document.getElementById("dum");
 
 	</div>
 
-	<div id="footer_copyright" >
-		<p></p>
-
-		Copyright © Arka Jain University</div>
-</div>
-
 <script type="text/javascript">
 	document.onload = ctck();
 </script>

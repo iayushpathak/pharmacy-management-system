@@ -108,19 +108,19 @@ var sds = document.getElementById("dum");
 						
 			//out.print("<td><a href='disselectord.jsp'>Click to select your order</a></td>");
 			
-				out.print("<tr><th>ID</th><th>PRODUCT CODE</th><th>PRODUCT NAME</th><th>MIN. QUANTITY</th><th>ORDER QUEUE</th><th>NET COST</th><th>AMOUNT</th></tr>");
+				out.print("<tr><th>ID</th><th>PRODUCT CODE</th><th>PRODUCT NAME</th><th>MIN. QTY</th><th>ORDER QTY</th><th>NET COST</th><th>AMOUNT</th></tr>");
 			while(rs.next()){
 				int id=rs.getInt(1);
 			    session.setAttribute("id",id);			
 				out.print("<tr>");
-				out.print("<td>" + rs.getString(1) + "</td>");
-				out.print("<td>" + rs.getString(2) + "</td>");
-				out.print("<td>" + rs.getString(3) + "</td>");
-				out.print("<td>" + rs.getString(5) + "</td>");
-				out.print("<td>" + rs.getString(6) + "</td>");
+				out.print("<td style='text-align:center'>" + rs.getString(1) + "</td>");
+				out.print("<td style='text-align:center'>" + rs.getString(2) + "</td>");
+				out.print("<td style='text-align:center'>" + rs.getString(3) + "</td>");
+				out.print("<td style='text-align:center'>" + rs.getString(5) + "</td>");
+				out.print("<td style='text-align:center'>" + rs.getString(6) + "</td>");
 				//out.print("<td>" + rs.getString(7) + "</td>");
-				out.print("<td>" + rs.getString(8) + "</td>");
-				out.print("<td>" + rs.getString(9) + "</td>");
+				out.print("<td style='text-align:center'>" + rs.getString(8) + "</td>");
+				out.print("<td style='text-align:center'>" + rs.getString(9) + "</td>");
 				
 				//out.print("<td>" DeleteServlet.Del`"</td>");
 				
@@ -211,11 +211,6 @@ var sds = document.getElementById("dum");
 
 	</div>
 
-	<div id="footer_copyright" >
-		<p></p>
-
-		Copyright © Arka Jain University</div>
-</div>
 
 <script type="text/javascript">
 	document.onload = ctck();

@@ -161,11 +161,7 @@ background-color:red;border:2px solid #336600;padding:3px;"></td></tr>
 
     </div>
 
-    <div id="footer_copyright" >
-        <p></p>
 
-        Copyright © Arka Jain University</div>
-</div>
 
 <script type="text/javascript">
     document.onload = ctck();

@@ -115,9 +115,6 @@ background-color:red;border:2px solid #336600;padding:3px;"></td></tr>
             <li><a href="#"></a></li>
         </ul>	<br />
       <span id="design">Designed by Ayush Pathak & Debashish Bera</span>
-      <script type="text/javascript">
-          document.onload = ctck();
-      </script>
   </div>
 </div>
     </body>
@@ -139,12 +136,6 @@ background-color:red;border:2px solid #336600;padding:3px;"></td></tr>
 
 
     </div>
-
-    <div id="footer_copyright" >
-        <p></p>
-
-        Copyright © Arka Jain University</div>
-</div>
 
 <script type="text/javascript">
     document.onload = ctck();

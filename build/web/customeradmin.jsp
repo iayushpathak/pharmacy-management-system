@@ -7,13 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Free Pharmaceutical Company Template- Download HTML Website Templates</title>
 <link href="style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript">
-function ctck()
-{
-var sds = document.getElementById("dum");
-if(sds == null){alert("You are using a free package.\n You are not allowed to remove the tag.\n");}
-}
-</script>
 
 <SCRIPT LANGUAGE="JavaScript">
 function dil(form)
@@ -228,9 +221,7 @@ var sds = document.getElementById("dum");
   Copyright © Your Company Name</div>
 </div>
 
-<script type="text/javascript">
-document.onload = ctck();
-</script>
+
 </div>
 
 </body>

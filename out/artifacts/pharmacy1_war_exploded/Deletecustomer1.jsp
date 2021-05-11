@@ -92,11 +92,11 @@ var sds = document.getElementById("dum");
 			if(status==true){
 			     				   
 		try {
-			PreparedStatement ps=con.prepareStatement("delete  from newcust4 where id = '"+id+"' ");
-			
-			ResultSet rs=ps.executeQuery();
-           			
-		    if(rs.next()){          			
+            PreparedStatement ps=con.prepareStatement("delete  from newcust4 where id = '"+id+"' ");
+
+            int rs=ps.executeUpdate();
+
+            if(rs>0){
 	        out.print("<p style=\"color:red; font-size:20px;\">Your details has been successfully removed.</p>");
 			request.setAttribute("deleted","You Details has been deleted");
 			%>			
@@ -185,11 +185,7 @@ var sds = document.getElementById("dum");
 
     </div>
 
-    <div id="footer_copyright" >
-        <p></p>
 
-        Copyright © Arka Jain University</div>
-</div>
 
 <script type="text/javascript">
     document.onload = ctck();

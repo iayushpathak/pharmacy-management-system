@@ -10,7 +10,7 @@
 <script type="text/javascript">
 </script>
 
-<SCRIPT LANGUAGE="JavaScript">
+<script LANGUAGE="JavaScript">
 function dil(form)
 {
    for(var i=0; i<form.elements.length; i++)
@@ -48,7 +48,7 @@ function dil(form)
    
    return true   
 }
-</SCRIPT>
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Global Banking ..</title>
 <link href="style.css" rel="stylesheet" type="text/css">
@@ -184,12 +184,6 @@ var sds = document.getElementById("dum");
 
 
     </div>
-
-    <div id="footer_copyright" >
-        <p></p>
-
-        Copyright © Arka Jain University</div>
-</div>
 
 <script type="text/javascript">
     document.onload = ctck();

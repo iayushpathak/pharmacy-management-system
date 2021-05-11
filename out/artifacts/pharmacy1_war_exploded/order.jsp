@@ -93,7 +93,7 @@
                             <TR>
                                 <TD style="color:yellow;"> Product Name :</TD>
                                 <TD>
-                                    <SELECT id="medicine" onchange="getPrice()" NAME="ProdCode">
+                                    <SELECT id="medicine" onchange="getPrice()" name="ProdCode">
                                         <option price="10" id="1" value="Paracetamol"> Paracetamol
                                         <option price="20" id="2" value="Zintec"> Zintec
                                         <option price="30" id="3" value="Dettol"> Dettol
@@ -205,12 +205,6 @@ background-color:red;border:2px solid #336600;padding:3px;"></td>
 
 
     </div>
-
-    <div id="footer_copyright">
-        <p></p>
-
-        Copyright © Arka Jain University
-    </div>
 </div>
 <script>
     function getPrice() {
@@ -224,9 +218,6 @@ background-color:red;border:2px solid #336600;padding:3px;"></td>
         document.getElementById("netcost").value = netCost;
         document.getElementById("amount").value = 0.9 * netCost;
     }
-</script>
-<script type="text/javascript">
-    document.onload = ctck();
 </script>
 
 </div>

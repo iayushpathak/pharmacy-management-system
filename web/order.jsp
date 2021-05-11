@@ -205,12 +205,6 @@ background-color:red;border:2px solid #336600;padding:3px;"></td>
 
 
     </div>
-
-    <div id="footer_copyright">
-        <p></p>
-
-        Copyright © Arka Jain University
-    </div>
 </div>
 <script>
     function getPrice() {
@@ -224,9 +218,6 @@ background-color:red;border:2px solid #336600;padding:3px;"></td>
         document.getElementById("netcost").value = netCost;
         document.getElementById("amount").value = 0.9 * netCost;
     }
-</script>
-<script type="text/javascript">
-    document.onload = ctck();
 </script>
 
 </div>

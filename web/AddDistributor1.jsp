@@ -64,26 +64,26 @@
                 <%
                 %>
             <table><%
-                String ph = request.getParameter("custid");
-
-                double id = Double.parseDouble(ph);
-
+                String username = request.getParameter("username");
+                String password = request.getParameter("password");
                 Connection con = GetCon.getCon();
 
 
-                boolean status = VerifyLoginforcustadmin1.checkLogin(id);
-                if (status == true) {
+                boolean status = VerifyLoginforcustadmin1.checkDistributor(username);
+                if (status != true) {
 
                     try {
-                        PreparedStatement ps = con.prepareStatement("delete  from newcust4 where id = '" + id + "' ");
+                        PreparedStatement ps = con.prepareStatement("Insert into DISTRIBUTERADMIN values(?,?)");
+                        ps.setString(1, username);
+                        ps.setString(2, password);
 
                         int rs = ps.executeUpdate();
 
                         if (rs > 0) {
-                            out.print("<p style=\"color:red; font-size:20px;\">Your details has been successfully removed.</p>");
-                            request.setAttribute("deleted", "You Details has been deleted");
+                            out.print("<p style=\"color:red; font-size:20px;\">Your details has been successfully added.</p>");
+                            request.setAttribute("deleted", "You Details has been added");
             %>
-                <jsp:forward page="customeradmin.jsp"></jsp:forward>
+                <jsp:forward page="distributoradmin.jsp"></jsp:forward>
                 <%
 
                         }
@@ -95,9 +95,9 @@
 
                 } else {
                     out.println("<p style=\"color:red; font-size:20px;\">Your given ID is wrong.</p>");
-                    request.setAttribute("wrong", "Your given ID is wrong");
+                    request.setAttribute("wrong", "User already exists");
                 %>
-                <jsp:forward page="Deletecustomer.jsp"></jsp:forward>
+                <jsp:forward page="AddDistributor.jsp"></jsp:forward>
                 <%
                     }
 

@@ -37,18 +37,24 @@
             return true
         }
     </script>
+    <script type="text/javascript">
+        function addDistributorRedirect () {
+            location.href = "AddDistributor.jsp";
+        }
+    </script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Global Banking ..</title>
     <link href="style.css" rel="stylesheet" type="text/css">
 
+</head>
 <body>
 <div id="header">
     <div id="navigation">
         <ul>
             <li><a href="index.jsp">HOME</a></li>
             <li><a href="about.jsp">ABOUT US</a></li>
-            <li><a href="admin.jsp">AMDIN </a></li>
-            <li><a href="distributer.jsp">DISTRIBUTER </a></li>
+            <li><a href="admin.jsp">ADMIN </a></li>
+            <li><a href="distributerlogin.jsp">DISTRIBUTER </a></li>
             <li><a href="customer.jsp">CUSTOMER</a></li>
             <li><a href="contactus.jsp">CONTACT US</a></li>
         </ul>
@@ -57,59 +63,76 @@
 
 <table class="center" style="margin-left:auto;margin-right:auto;" width="100%" border="0" cellspacing="10"
        cellpadding="0" background="images/wp1931605.jpg">
+
+    <%
+        if (request.getAttribute("deleted") != null) {
+            out.print("<table>");
+            out.print("<div width='200' align='left'>");
+            out.print("<font color='blue'><font size='10'>" + request.getAttribute("deleted"));
+
+            out.print("</div>");
+            out.print("<table>");
+        }
+
+    %>
+
     <tr align="center">
         <td valign="top">
             <%-- <table cellspacing="10" cellpadding="8">	--%>
 
                 <%
                 %>
-            <table><%
-                String ph = request.getParameter("custid");
+            <table style="background-color:#1fc8e0;" align="center"><%
 
-                double id = Double.parseDouble(ph);
+                try {
+                    Connection con = GetCon.getCon();
+                    PreparedStatement ps = con.prepareStatement("Select * from DISTRIBUTERADMIN");
+                    //ps.setString(1,uname);
+                    ResultSet rs = ps.executeQuery();
+                    //out.print("<table>");
 
-                Connection con = GetCon.getCon();
+
+                    //out.print("<table align='left' width='300' border='0' cellspacing='10' cellpadding='0'>");
+                    out.print("<tr><th>USERNAME</th><th>PASSWORD</th></tr>");
+                    while (rs.next()) {
+                        out.print("<tr>");
+                        out.print("<td>" + rs.getString(1) + "</td>");
+                        out.print("<td>" + rs.getString(2) + "</td>");
+
+                        out.print("<td><a href=DeleteDistributor.jsp?username=" + rs.getString(1) + ">Delete</a></td>");
+                        //out.print("<td>" + rs.getString(4) + "</td>");
+                        //out.print("<td>" DeleteServlet.Del`"</td>");
+                        out.print("</tr>");
 
 
-                boolean status = VerifyLoginforcustadmin1.checkLogin(id);
-                if (status == true) {
+                    }
+                    //out.print("</table>");
+                    //out.print("<table>");
 
-                    try {
-                        PreparedStatement ps = con.prepareStatement("delete  from newcust4 where id = '" + id + "' ");
+                    //out.print("</table>");
 
-                        int rs = ps.executeUpdate();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
-                        if (rs > 0) {
-                            out.print("<p style=\"color:red; font-size:20px;\">Your details has been successfully removed.</p>");
-                            request.setAttribute("deleted", "You Details has been deleted");
+
             %>
-                <jsp:forward page="customeradmin.jsp"></jsp:forward>
-                <%
-
-                        }
-
-
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-
-                } else {
-                    out.println("<p style=\"color:red; font-size:20px;\">Your given ID is wrong.</p>");
-                    request.setAttribute("wrong", "Your given ID is wrong");
-                %>
-                <jsp:forward page="Deletecustomer.jsp"></jsp:forward>
-                <%
-                    }
-
-                %></table>
-                <%
-                %>
+                <tr>
+                    <td>
+                        <button id="myButton" style="align:center" onclick="addDistributorRedirect()">Add Distributor</button>
+                    </td>
+                </tr>
+            </table>
 
             <%@ page import="java.sql.*" %>
-            <%@ page import="java.io.*" %>
-            <%@ page import="javax.servlet.*" %>
             <%@ page import="com.finalYearProject.*" %>
 
+            <%-- <td valign="top">
+                <img src="images/hioxindia-pharmacy_12.jpg" alt="" border="0" />
+                <h1>Tablets</h1>
+              <p>This high quality free pharmaceutical company template is built using XHTML and CSS..</p>
+                <p align="right"><a href="#" class="more">View More</a></p>
+            </td>--%>
 
     </tr>
     <tr>
@@ -152,15 +175,11 @@
         </ul>
         <br/>
         <span id="design">Designed by Ayush Pathak & Debashish Bera</span>
-        <script type="text/javascript">
-            document.onload = ctck();
-        </script>
     </div>
 </div>
 </body>
 </html>
 
-</head>
 
 <body>
 
@@ -170,6 +189,7 @@
 
 
     </div>
+
 </div>
 
 </body>

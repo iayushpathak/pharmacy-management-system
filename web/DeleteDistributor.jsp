@@ -64,18 +64,15 @@
                 <%
                 %>
             <table><%
-                String ph = request.getParameter("custid");
-
-                double id = Double.parseDouble(ph);
-
+                String username = request.getParameter("username");
                 Connection con = GetCon.getCon();
 
 
-                boolean status = VerifyLoginforcustadmin1.checkLogin(id);
+                boolean status = VerifyLoginforcustadmin1.checkDistributor(username);
                 if (status == true) {
 
                     try {
-                        PreparedStatement ps = con.prepareStatement("delete  from newcust4 where id = '" + id + "' ");
+                        PreparedStatement ps = con.prepareStatement("delete  from DISTRIBUTERADMIN where username = '" + username + "' ");
 
                         int rs = ps.executeUpdate();
 
@@ -83,7 +80,7 @@
                             out.print("<p style=\"color:red; font-size:20px;\">Your details has been successfully removed.</p>");
                             request.setAttribute("deleted", "You Details has been deleted");
             %>
-                <jsp:forward page="customeradmin.jsp"></jsp:forward>
+                <jsp:forward page="distributoradmin.jsp"></jsp:forward>
                 <%
 
                         }

@@ -8,40 +8,25 @@
         function dil(form) {
             for (var i = 0; i < form.elements.length; i++) {
                 if (form.elements[i].value == "") {
-                    alert("Fill out all Fields")
-                    document.F1.accountno.focus()
+                    alert("Fill out this Fields")
+                    document.F1.custid.focus()
                     return false
                 }
             }
 
-            if (isNaN(document.F1.accountno.value)) {
-                alert("Accountno must  be  number & can't be null")
-                document.F1.accountno.value = ""
-                document.F1.accountno.focus()
-                return false
-            }
-            if (!isNaN(document.F1.username.value)) {
-                alert("User Name  must  be  char's & can't be null")
-                document.F1.username.value = ""
-                document.F1.username.focus()
+            if (isNaN(document.F1.custid.value)) {
+                alert("coustmer id must  be  number & can't be null")
+                document.F1.custid.value = ""
+                document.F1.custid.focus()
                 return false
             }
 
-            if (!isNaN(document.F1.password.value)) {
-                alert("Password  must  be  char's & can't be null")
-                document.F1.password.value = ""
-                document.F1.password.focus()
-                return false
-            }
 
             return true
         }
     </script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Global Banking ..</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
 
-<body>
 <div id="header">
     <div id="navigation">
         <ul>
@@ -57,59 +42,48 @@
 
 <table class="center" style="margin-left:auto;margin-right:auto;" width="100%" border="0" cellspacing="10"
        cellpadding="0" background="images/wp1931605.jpg">
+
     <tr align="center">
         <td valign="top">
-            <%-- <table cellspacing="10" cellpadding="8">	--%>
 
-                <%
-                %>
-            <table><%
-                String ph = request.getParameter("custid");
+            <form name=F1 onSubmit="return dil(this)" action="AddDistributor1.jsp">
+                <table cellspacing="5" cellpadding="3">
 
-                double id = Double.parseDouble(ph);
+                    <%
+                        if (request.getAttribute("wrong") != null) {
+                            out.print("<div>");
+                            out.print("<font color='blue'><font size='4'>" + request.getAttribute("wrong") + "");
 
-                Connection con = GetCon.getCon();
-
-
-                boolean status = VerifyLoginforcustadmin1.checkLogin(id);
-                if (status == true) {
-
-                    try {
-                        PreparedStatement ps = con.prepareStatement("delete  from newcust4 where id = '" + id + "' ");
-
-                        int rs = ps.executeUpdate();
-
-                        if (rs > 0) {
-                            out.print("<p style=\"color:red; font-size:20px;\">Your details has been successfully removed.</p>");
-                            request.setAttribute("deleted", "You Details has been deleted");
-            %>
-                <jsp:forward page="customeradmin.jsp"></jsp:forward>
-                <%
-
+                            out.print("</div>");
                         }
 
+                    %>
 
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
 
-                } else {
-                    out.println("<p style=\"color:red; font-size:20px;\">Your given ID is wrong.</p>");
-                    request.setAttribute("wrong", "Your given ID is wrong");
-                %>
-                <jsp:forward page="Deletecustomer.jsp"></jsp:forward>
-                <%
-                    }
+                    <tr>
+                        <td style="font-size:12pt;color:black;font-family:Serif;background-color:#56c790;border:2px solid #336600;padding:3px;">
+                            Username
+                        </td>
+                        <td><input type="text" name="username"/></td>
+                    </tr>
 
-                %></table>
-                <%
-                %>
+                    <tr>
+                        <td style="font-size:12pt;color:black;font-family:Serif;background-color:#56c790;border:2px solid #336600;padding:3px;">
+                            Password
+                        </td>
+                        <td><input type="text" name="password"/></td>
+                    </tr>
 
-            <%@ page import="java.sql.*" %>
-            <%@ page import="java.io.*" %>
-            <%@ page import="javax.servlet.*" %>
-            <%@ page import="com.finalYearProject.*" %>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Submit" style="font-size:7pt;color:white;
+background-color:green;border:2px solid #336600;padding:3px;"/>
 
+                            <INPUT TYPE=RESET VALUE="CLEAR" style="font-size:7pt;color:white;
+background-color:red;border:2px solid #336600;padding:3px;"></td>
+                    </tr>
+                </table>
+            </form>
 
     </tr>
     <tr>
@@ -152,9 +126,6 @@
         </ul>
         <br/>
         <span id="design">Designed by Ayush Pathak & Debashish Bera</span>
-        <script type="text/javascript">
-            document.onload = ctck();
-        </script>
     </div>
 </div>
 </body>

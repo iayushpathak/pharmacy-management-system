@@ -99,7 +99,7 @@
                         out.print("<td>" + rs.getString(6) + "</td>");
                         out.print("<td>" + rs.getString(11) + "</td>");
                         out.print("<td>" + rs.getString(12) + "</td>");
-                        out.print("<td><a href=/pharmacy1_war_exploded/Deletecustomer1.jsp?custid="+rs.getString(1)+">Delete</a></td>");
+                        out.print("<td><a href=Deletecustomer1.jsp?custid="+rs.getString(1)+">Delete</a></td>");
                         //out.print("<td>" + rs.getString(4) + "</td>");
                         //out.print("<td>" DeleteServlet.Del`"</td>");
                         out.print("</tr>");

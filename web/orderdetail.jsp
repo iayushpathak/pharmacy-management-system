@@ -119,6 +119,15 @@
 
                         out.print("Your order has been confirmed");
                         request.setAttribute("order", "Your order has booked");
+                        request.setAttribute("ProdCode",ProdCode);
+                        request.setAttribute("productname",productname);
+                        request.setAttribute("tax",tax);
+                        request.setAttribute("minq",minq);
+                        request.setAttribute("orderq",orderq);
+                        request.setAttribute("discount",discount);
+                        request.setAttribute("netcost",netcost);
+                        request.setAttribute("amount",amount);
+                        request.setAttribute("paymode",paymode);
             %>
                 <jsp:forward page="index.jsp"></jsp:forward>
                 <%

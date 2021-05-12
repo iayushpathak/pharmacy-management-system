@@ -104,11 +104,6 @@ background-color:#56c790;border:2px solid #336600;padding:3px;">PASSWORD:</td>
 background-color:#56c790;border:2px solid #336600;padding:3px;">RE-PASSWORD:</td>
 								<td> <input type="password" name="repassword" /></td>
 							</tr>
-							<tr>
-								<td style="font-size:12pt;color:black;font-family:Serif;
-background-color:#56c790;border:2px solid #336600;padding:3px;">DISTRIBUTER NAME:</td>
-								<td> <input type="text" name="disname" /></td>
-							</tr>
 
 							<!-- Gender:<br/><br/>
                                   Male<input type="radio" name="gender" value="male"> Female<input type="radio" name="gender" value="female"/><br/><br/> -->

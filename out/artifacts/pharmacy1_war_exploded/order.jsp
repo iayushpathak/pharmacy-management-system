@@ -186,7 +186,7 @@ background-color:red;border:2px solid #336600;padding:3px;"></td>
                     <li><a href="#"></a></li>
                 </ul>
                 <br/>
-                <span id="design">Designed by Ayush Pathak</span>
+                <span id="design">Designed by Ayush Pathak & Debashish Bera</span>
                 <script type="text/javascript">
                     document.onload = ctck();
                 </script>

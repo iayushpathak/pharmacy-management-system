@@ -94,9 +94,9 @@ var sds = document.getElementById("dum");
 		try {
 				PreparedStatement ps=con.prepareStatement("delete  from neworder4 where id = '"+id+"' ");
 			
-			ResultSet rs=ps.executeQuery();
+			int rs=ps.executeUpdate();
            			
-		   if(rs.next()){          			
+		   if(rs>0){
 	        out.print("<p style=\"color:red; font-size:20px;\">Your order has been successfully removed.</p>");
 			request.setAttribute("order","Your Order has been deleted");
 			%>			
